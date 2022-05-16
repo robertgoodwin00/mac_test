@@ -51,16 +51,13 @@ class Title_Window(planes.Plane):
 
 
     def refresh(self):
-        background_color = (75,75,75)
+        background_color = (55,175,75)
         self.image.fill(background_color)
        
           
         text_surface = get_font("Vera.ttf", 18).render("test message", False, (250,10,10))
         x = 200
         self.image.blit(text_surface, (x,35))
-
-
-
 
 
 
