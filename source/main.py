@@ -74,6 +74,9 @@ class Title_Window(planes.Plane):
         text_surface = get_font("Vera.ttf", 18).render("test message", False, (250,10,10))
         x = 200
         self.image.blit(text_surface, (x,35))
+        
+        text_surface = get_font("VeraSe.ttf",14).render("Another message", True, (160,200,75))
+        self.image.blit(text_surface, (x,120))
 
 
 
@@ -82,11 +85,19 @@ class Title_Window(planes.Plane):
         source_rect = got_tachie.get_rect()
         vertical_offset = 0
 
+        fil = '3087.jpg'
+        image = load_back(fil)
+        back_source_rect = (0, 0, 580, 580)
+        
+        image.blit(got_tachie,(0,0), source_rect)
+        
+        self.image.blit(image, (500,100), back_source_rect)
+        self.last_image_id = None
 
-        self.image.blit(got_tachie, (250, 50), source_rect)
 
-        text_surface = get_font("VeraSe.ttf",14).render("Another message", True, (160,200,75))
-        self.image.blit(text_surface, (250,120))
+        #self.image.blit(got_tachie, (250, 50), source_rect)
+
+        
         
         
 
