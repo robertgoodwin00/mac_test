@@ -41,15 +41,21 @@ def load_back(name):
 pygame.init()
 
 
-screen = planes.Display((900,600))
-#screen = pygame.display.set_mode((900,600))
+#screen = planes.Display((900,600))
+screen = pygame.display.set_mode((900,600))
 
 #self.image.fill((20, 20, 160))
 
-screen.image.fill((20, 20, 160))
+screen.fill((20, 20, 160))
 
+text_surface = get_font("Vera.ttf", 18).render("test message", False, (250,10,10))
+x = 200
+screen.blit(text_surface, (x,35))
+        
+text_surface = get_font("VeraSe.ttf",14).render("Another message", True, (160,200,75))
+screen.blit(text_surface, (x,120))
 
-
+'''
 class Title_Window(planes.Plane):
     def __init__(self): 
 
@@ -71,11 +77,11 @@ class Title_Window(planes.Plane):
         self.last_image_id = None
        
           
-        text_surface = get_font("Vera.ttf", 14).render("test message", False, (250,10,10))
+        text_surface = get_font("Vera.ttf", 18).render("test message", False, (250,10,10))
         x = 200
         self.image.blit(text_surface, (x,35))
         
-        text_surface = get_font("VeraSe.ttf",18).render("Another message", True, (160,200,75))
+        text_surface = get_font("VeraSe.ttf",14).render("Another message", True, (160,200,75))
         self.image.blit(text_surface, (x,120))
 
 
@@ -103,10 +109,10 @@ class Title_Window(planes.Plane):
 
 
 tw = Title_Window()
-screen.sub(tw)
+screen.sub(tw)#
 
 screen.update()
-screen.render()
+screen.render()'''
 pygame.display.flip() # update the whole screen
         
         
