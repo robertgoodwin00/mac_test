@@ -81,13 +81,13 @@ class Title_Window(planes.Plane):
         x = 200
         self.image.blit(text_surface, (x,35))
         
-        text_surface = get_font("Vera.ttf",14).render("Another message", True, (160,200,75))
+        text_surface = get_font("Vera.ttf",14).render("Another message", False, (160,200,75))
         self.image.blit(text_surface, (x,120))
         
-        text_surface = get_font("LiberationSans.ttf",18).render("Yet Another message", True, (160,200,125))
+        text_surface = get_font("LiberationSans.ttf",18).render("Yet Another message", False, (160,200,125))
         self.image.blit(text_surface, (x,180))
         
-        text_surface = get_font("LiberationSerif.ttf",18).render("Some other message", True, (160,100,175))
+        text_surface = get_font("LiberationSerif.ttf",18).render("Some other message", False, (160,100,175))
         self.image.blit(text_surface, (x,240))
 
 
