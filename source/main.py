@@ -25,7 +25,17 @@ main_dir = os.path.join(main_directory,"../")
 save_data_path = "save_data"
 
    
+   
+#quick function to load an image
+def load_back(name):
+    directory_name = 'backs'
+    
+    path = os.path.join(main_dir, directory_name, name)  # join path with directory
 
+    image = pygame.image.load(path)  #.convert_alpha()
+   
+    return image  
+    
         
 
 pygame.init()
@@ -53,6 +63,12 @@ class Title_Window(planes.Plane):
     def refresh(self):
         background_color = (55,175,75)
         self.image.fill(background_color)
+       
+        fil = '0010.jpg'
+        image = load_back(fil)
+        source_rect = (0, 0, 580, 580)
+        self.image.blit(image, (0,0), source_rect)
+        self.last_image_id = None
        
           
         text_surface = get_font("Vera.ttf", 18).render("test message", False, (250,10,10))
